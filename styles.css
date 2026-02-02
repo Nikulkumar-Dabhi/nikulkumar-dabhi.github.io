@@ -14,7 +14,37 @@
   --radius: 12px;
   --radius-sm: 8px;
   --transition: 0.2s ease;
+  --transition-slow: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+/* --- Scroll-triggered animations --- */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s var(--transition-slow), transform 0.6s var(--transition-slow);
+}
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.animate-on-scroll .animate-item {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.4s var(--transition-slow), transform 0.4s var(--transition-slow);
+}
+.animate-on-scroll.is-visible .animate-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+.animate-on-scroll.is-visible .animate-item:nth-child(1) { transition-delay: 0.05s; }
+.animate-on-scroll.is-visible .animate-item:nth-child(2) { transition-delay: 0.1s; }
+.animate-on-scroll.is-visible .animate-item:nth-child(3) { transition-delay: 0.15s; }
+.animate-on-scroll.is-visible .animate-item:nth-child(4) { transition-delay: 0.2s; }
+.animate-on-scroll.is-visible .animate-item:nth-child(5) { transition-delay: 0.25s; }
+.animate-on-scroll.is-visible .animate-item:nth-child(6) { transition-delay: 0.3s; }
+.animate-on-scroll.is-visible .animate-item:nth-child(7) { transition-delay: 0.35s; }
+.animate-on-scroll.is-visible .animate-item:nth-child(8) { transition-delay: 0.4s; }
+.animate-on-scroll.is-visible .animate-item:nth-child(n+9) { transition-delay: 0.45s; }
 
 /* --- Reset & Base --- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -92,6 +122,7 @@ li { margin-bottom: 0.35rem; }
   transition: color var(--transition);
 }
 .nav-links a:hover { color: var(--text); }
+.nav-links a.active { color: var(--accent); }
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -160,10 +191,12 @@ li { margin-bottom: 0.35rem; }
   font-size: 0.95rem;
   font-weight: 500;
   border-radius: var(--radius-sm);
-  transition: background var(--transition), color var(--transition), border-color var(--transition);
+  transition: background var(--transition), color var(--transition), border-color var(--transition), transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
   border: 2px solid transparent;
 }
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
 .btn-primary {
   background: var(--accent);
   color: var(--bg-dark);
@@ -173,6 +206,7 @@ li { margin-bottom: 0.35rem; }
   background: var(--accent-hover);
   border-color: var(--accent-hover);
   color: var(--bg-dark);
+  box-shadow: 0 6px 20px rgba(62, 184, 207, 0.35);
 }
 .btn-secondary {
   background: transparent;
@@ -182,6 +216,7 @@ li { margin-bottom: 0.35rem; }
 .btn-secondary:hover {
   border-color: var(--text-muted);
   color: var(--text);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
 }
 .hero-visual {
   position: absolute;
@@ -223,7 +258,9 @@ li { margin-bottom: 0.35rem; }
   position: relative;
   padding-left: 2rem;
   padding-bottom: 2.5rem;
+  transition: transform 0.25s ease;
 }
+.timeline-item:hover { transform: translateX(6px); }
 .timeline-item:last-child { padding-bottom: 0; }
 .timeline-marker {
   position: absolute;
@@ -271,6 +308,12 @@ li { margin-bottom: 0.35rem; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.5rem;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+.education-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
 }
 .education-card h3 {
   font-size: 1.05rem;
@@ -307,6 +350,13 @@ li { margin-bottom: 0.35rem; }
   border: 1px solid var(--border);
   border-radius: 999px;
   color: var(--text);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  cursor: default;
+}
+.skill-tags span:hover {
+  background: var(--bg-elevated);
+  border-color: var(--accent);
+  transform: scale(1.05);
 }
 
 /* --- Projects --- */
@@ -319,9 +369,13 @@ li { margin-bottom: 0.35rem; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.5rem;
-  transition: border-color var(--transition);
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
-.project-card:hover { border-color: var(--accent); }
+.project-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(62, 184, 207, 0.15);
+}
 .project-card h3 {
   font-size: 1.1rem;
   font-weight: 600;
@@ -346,6 +400,11 @@ li { margin-bottom: 0.35rem; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.5rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.publication-card:hover {
+  border-color: var(--accent-warm);
+  box-shadow: 0 8px 24px rgba(232, 168, 74, 0.12);
 }
 .publication-card h3 {
   font-size: 1.05rem;
@@ -375,7 +434,9 @@ li { margin-bottom: 0.35rem; }
   border-bottom: 1px solid var(--border);
   color: var(--text-muted);
   font-size: 0.95rem;
+  transition: color 0.2s ease, padding-left 0.2s ease;
 }
+.cert-list li:hover { color: var(--text); padding-left: 6px; }
 .cert-list li:last-child { border-bottom: none; }
 
 /* --- Contact --- */
@@ -399,13 +460,14 @@ li { margin-bottom: 0.35rem; }
   border-radius: var(--radius-sm);
   color: var(--text);
   font-weight: 500;
-  transition: border-color var(--transition), background var(--transition);
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.2s ease;
   max-width: 320px;
 }
 .contact-link:hover {
   border-color: var(--accent);
   background: var(--bg-elevated);
   color: var(--text);
+  transform: translateX(6px);
 }
 .contact-icon {
   font-family: var(--font-mono);
