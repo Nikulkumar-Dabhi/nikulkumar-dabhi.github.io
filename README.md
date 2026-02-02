@@ -4,7 +4,17 @@ Personal portfolio site: **Data Analyst | AI Enthusiast | Python | SQL | Power B
 
 **Live site:** [https://nikulkumar-dabhi.github.io](https://nikulkumar-dabhi.github.io)
 
-Local preview: open `index.html` in a browser. To host on GitHub Pages, see below.
+Local preview: open `index.html` in a browser.
+
+---
+
+## Publish on GitHub Pages (site not live yet?)
+
+This project is ready to publish. It includes **`.nojekyll`** so GitHub serves it as static files (no Jekyll). After pushing:
+
+1. **Enable Pages:** open **[Settings → Pages](https://github.com/Nikulkumar-Dabhi/nikulkumar-dabhi.github.io/settings/pages)**
+2. **Source:** Deploy from a branch → **Branch:** `main` → **Folder:** `/ (root)` → **Save**
+3. Wait 1–2 minutes; the site will be at **https://nikulkumar-dabhi.github.io**
 
 ## Contents
 
@@ -20,6 +30,7 @@ Local preview: open `index.html` in a browser. To host on GitHub Pages, see belo
 ## Tech
 
 - Plain **HTML**, **CSS**, **JavaScript** (no build step)  
+- **`.nojekyll`** included so GitHub Pages serves the site as static files  
 - Responsive layout, smooth scroll, mobile nav  
 - Fonts: Outfit, JetBrains Mono (Google Fonts)  
 
@@ -46,12 +57,12 @@ git push -u origin main
 
 ### 3. Enable GitHub Pages
 
-- In the repo: **Settings** → **Pages**
+- Open **[Settings → Pages](https://github.com/Nikulkumar-Dabhi/nikulkumar-dabhi.github.io/settings/pages)** (or in the repo: **Settings** → **Pages**)
 - **Source:** Deploy from a branch  
 - **Branch:** `main`, **Folder:** `/ (root)`  
 - **Save**
 
-Your site will be live at **https://nikulkumar-dabhi.github.io**.
+Your site will be live at **https://nikulkumar-dabhi.github.io** (allow 1–2 minutes).
 
 ### 4. Set it as the website on your GitHub profile
 

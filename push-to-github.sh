@@ -19,7 +19,8 @@ git push -u origin main
 
 if [ $? -eq 0 ]; then
   echo ""
-  echo "Done! Next:"
-  echo "1. GitHub repo → Settings → Pages → Source: Deploy from branch → main → / (root) → Save"
-  echo "2. Profile → Edit profile → Website: https://nikulkumar-dabhi.github.io → Save"
+  echo "Done! Enable the site:"
+  echo "1. Open: https://github.com/Nikulkumar-Dabhi/nikulkumar-dabhi.github.io/settings/pages"
+  echo "   Source: Deploy from branch → main → / (root) → Save"
+  echo "2. Wait 1–2 min, then visit: https://nikulkumar-dabhi.github.io"
 fi
