@@ -2,7 +2,9 @@
 
 Personal portfolio site: **Data Analyst | AI Enthusiast | Python | SQL | Power BI**
 
-Live preview: open `index.html` in a browser, or host on **GitHub Pages** (see below).
+**Live site:** [https://nikulkumar-dabhi.github.io](https://nikulkumar-dabhi.github.io)
+
+Local preview: open `index.html` in a browser. To host on GitHub Pages, see below.
 
 ## Contents
 
@@ -23,12 +25,11 @@ Live preview: open `index.html` in a browser, or host on **GitHub Pages** (see b
 
 ## Use as your GitHub profile default website
 
-To have this portfolio appear as your main profile website (e.g. `https://YOUR_USERNAME.github.io` and linked on your profile):
+To have this portfolio appear as your main profile website (e.g. [https://nikulkumar-dabhi.github.io](https://nikulkumar-dabhi.github.io) linked on your profile):
 
 ### 1. Create the profile Pages repo
 
-- **Repository name must be exactly:** `YOUR_USERNAME.github.io`  
-  (e.g. `nikulkumar-dabhi.github.io` for username `nikulkumar-dabhi`)
+- **Repository name must be exactly:** `nikulkumar-dabhi.github.io`
 - Create the repo as **Public**, no README needed.
 
 ### 2. Push this project into that repo
@@ -39,7 +40,7 @@ git init
 git add .
 git commit -m "Initial portfolio"
 git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_USERNAME.github.io.git
+git remote add origin https://github.com/Nikulkumar-Dabhi/nikulkumar-dabhi.github.io.git
 git push -u origin main
 ```
 
@@ -50,13 +51,13 @@ git push -u origin main
 - **Branch:** `main`, **Folder:** `/ (root)`  
 - **Save**
 
-Your site will be live at **https://YOUR_USERNAME.github.io** (e.g. `https://nikulkumar-dabhi.github.io`).
+Your site will be live at **https://nikulkumar-dabhi.github.io**.
 
 ### 4. Set it as the website on your GitHub profile
 
 - On GitHub: click your **profile picture** (top right) → **Your profile**
 - Click **Edit profile** (the pencil icon)
-- In **Website**, paste: `https://YOUR_USERNAME.github.io`
+- In **Website**, paste: `https://nikulkumar-dabhi.github.io`
 - Click **Save profile**
 
 Your portfolio will then show as your default website on your GitHub profile.
@@ -69,18 +70,18 @@ If you use a different repo name (e.g. `portfolio`):
 
 1. Create the repo and push this folder (same `git` steps as above, with your repo URL).
 2. **Settings** → **Pages** → deploy from branch `main`, folder **/ (root)**.
-3. Site URL: `https://YOUR_USERNAME.github.io/REPO_NAME/`
+3. Site URL: `https://nikulkumar-dabhi.github.io/REPO_NAME/`
 4. In **Edit profile** → **Website**, use that full URL.  
 
 ## Optional: Use project repo as subpath
 
-If the site is at `https://username.github.io/portfolio/`, add a `<base>` tag in `index.html` inside `<head>`:
+If the site is at `https://nikulkumar-dabhi.github.io/portfolio/`, add a `<base>` tag in `index.html` inside `<head>`:
 
 ```html
-<base href="https://username.github.io/portfolio/">
+<base href="https://nikulkumar-dabhi.github.io/portfolio/">
 ```
 
-Then asset links will resolve correctly. For a repo named `username.github.io` with content at root, no `<base>` is needed.
+Then asset links will resolve correctly. For a repo named `nikulkumar-dabhi.github.io` with content at root, no `<base>` is needed.
 
 ---
 
