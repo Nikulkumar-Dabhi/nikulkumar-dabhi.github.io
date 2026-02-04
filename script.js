@@ -1,27 +1,10 @@
 (function () {
   'use strict';
 
-  // Current year in footer
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // ----- Scroll-triggered animations -----
-  var animatedSections = document.querySelectorAll('.animate-on-scroll');
-  var observerOptions = { root: null, rootMargin: '0px 0px -80px 0px', threshold: 0.1 };
-
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-      }
-    });
-  }, observerOptions);
-
-  animatedSections.forEach(function (section) {
-    observer.observe(section);
-  });
-
-  // ----- Active nav link (scroll spy) -----
+  // Active nav link (scroll spy)
   var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
   var sections = document.querySelectorAll('section[id]');
 
@@ -43,12 +26,10 @@
     });
   }
 
-  window.addEventListener('scroll', function () {
-    requestAnimationFrame(setActiveNav);
-  });
+  window.addEventListener('scroll', function () { requestAnimationFrame(setActiveNav); });
   setActiveNav();
 
-  // ----- Mobile nav toggle -----
+  // Mobile nav toggle
   var navToggle = document.querySelector('.nav-toggle');
   var navLinksEl = document.querySelector('.nav-links');
   if (navToggle && navLinksEl) {
@@ -57,9 +38,7 @@
       navToggle.setAttribute('aria-expanded', navLinksEl.classList.contains('is-open'));
     });
     navLinksEl.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        navLinksEl.classList.remove('is-open');
-      });
+      link.addEventListener('click', function () { navLinksEl.classList.remove('is-open'); });
     });
   }
 
@@ -69,7 +48,7 @@
     }
   });
 
-  // ----- Smooth scroll for anchor links (enhance native behavior) -----
+  // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
       var href = this.getAttribute('href');
