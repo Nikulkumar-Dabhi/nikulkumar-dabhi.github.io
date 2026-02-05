@@ -517,8 +517,17 @@ main { color: #f0f6fc; }
   }
   .hero-content { max-width: none; }
   .hero-cta { justify-content: center; }
-  .hero-visual { order: -1; }
-  .hero-photo { width: min(220px, 60%); }
+  .hero-visual {
+    order: -1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .hero-photo {
+    width: min(220px, 60%);
+    margin-left: auto;
+    margin-right: auto;
+  }
   .hero-grid { opacity: 0.15; }
   .section { padding: 3rem 0; }
   .section.about { padding-top: 2rem; }
