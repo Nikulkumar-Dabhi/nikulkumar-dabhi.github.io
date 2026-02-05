@@ -152,10 +152,10 @@ main { color: #f0f6fc; }
   color: #ffffff;
 }
 .hero-title {
-  font-size: 1.05rem;
+  font-size: 1.35rem;
   color: #c9d1d9;
   margin: 0 0 0.2rem;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.5;
 }
 .hero-skills {
